@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GUIController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Companies">
+               <content>
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                     <items>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.60003662109375" minWidth="10.0" prefWidth="169.60003662109375" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="636.7999877929688" minWidth="10.0" prefWidth="630.3999633789062" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter Company name">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter ABN" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter URL" GridPane.rowIndex="2">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter Address" GridPane.rowIndex="3">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="cmp_txt_cname" prefHeight="26.0" prefWidth="618.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="cmp_txt_abn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="cmp_txt_url" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="cmp_txt_addr" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="cmp_btn_add_cmp" mnemonicParsing="false" onAction="#add_company" prefHeight="26.0" prefWidth="135.0" text="Add Company" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="cmp_tblview" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="cmp_tblr_cid" prefWidth="84.800048828125" text="Company ID" />
+                            <TableColumn fx:id="cmp_tblr_cname" prefWidth="217.5999755859375" text="Company Name" />
+                              <TableColumn fx:id="cmp_tblr_abn" prefWidth="162.39996337890625" text="ABN" />
+                              <TableColumn fx:id="cmp_tblr_url" prefWidth="160.0" text="URL" />
+                              <TableColumn fx:id="cmp_tblr_addr" prefWidth="180.00006103515625" text="Address" />
+                          </columns>
+                        </TableView>
+                     </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+          <Tab text="Owners">
+               <content>
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                     <items>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="173.39998779296874" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="627.7999877929688" minWidth="10.0" prefWidth="626.2000122070312" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter first name">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter surname" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter role" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter email ID" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter company ID" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="own_btn_add_own" mnemonicParsing="false" onAction="#add_owner" prefHeight="26.0" prefWidth="143.0" text="Add Owner" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="own_txt_fname" GridPane.columnIndex="1">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="own_txt_surname" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="own_txt_role" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="own_txt_mail" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="own_txt_cid" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="own_tblview" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="own_tblr_oid" prefWidth="64.0" text="Owner ID" />
+                            <TableColumn fx:id="own_tblr_fname" prefWidth="140.79998779296875" text="First Name" />
+                              <TableColumn fx:id="own_tblr_sname" prefWidth="131.199951171875" text="Surname" />
+                              <TableColumn fx:id="own_tblr_role" prefWidth="161.5999755859375" text="Role" />
+                              <TableColumn fx:id="own_tblr_mail" prefWidth="215.199951171875" text="Email ID" />
+                              <TableColumn fx:id="own_tblr_cid" prefWidth="91.2000732421875" text="Company ID" />
+                          </columns>
+                        </TableView>
+                     </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+            <Tab text="Projects">
+               <content>
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                     <items>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.4000244140625" minWidth="10.0" prefWidth="201.6" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.7999877929688" minWidth="10.0" prefWidth="599.2" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter title">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="enter description" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Enter Owner ID" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Skill of Programming" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Skill of Networking" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="165.0" text="Skill of Analytics" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="20.0" prefWidth="189.0" text="Skill of Web technologies" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="prj_txt_title" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_desc" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_oid" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_p" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_n" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_a" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="prj_txt_w" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="prj_btn_add_prj" mnemonicParsing="false" onAction="#add_project" prefHeight="26.0" prefWidth="133.0" text="Add Project" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="prj_tblView" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="prj_tblr_pid" prefWidth="66.4000244140625" text="Project ID" />
+                            <TableColumn fx:id="prj_tblr_title" prefWidth="228.0" text="Title" />
+                              <TableColumn fx:id="prj_tblr_desc" prefWidth="208.0" text="Description" />
+                              <TableColumn fx:id="prj_tblr_oid" prefWidth="87.199951171875" text="Owner ID" />
+                              <TableColumn fx:id="prj_tblr_p" prefWidth="51.20001220703125" text="P" />
+                              <TableColumn fx:id="prj_tblr_n" prefWidth="52.7999267578125" text="N" />
+                              <TableColumn fx:id="prj_tblr_a" prefWidth="52.800048828125" text="A" />
+                              <TableColumn fx:id="prj_tblr_w" prefWidth="60.7999267578125" text="W" />
+                          </columns>
+                        </TableView>
+                     </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab text="Students">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="100.0" layoutY="49.0" prefHeight="669.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="20.0" prefWidth="220.0" text="Enter file name of students.txt">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="15.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="stu_txt_import" prefWidth="250.0">
+                                       <HBox.margin>
+                                          <Insets left="20.0" top="13.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button fx:id="stu_btn_import" mnemonicParsing="false" onAction="#import_students" prefHeight="26.0" prefWidth="126.0" text="Import ">
+                                       <HBox.margin>
+                                          <Insets left="20.0" top="13.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <GridPane prefHeight="289.0" prefWidth="800.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.20001220703125" minWidth="10.0" prefWidth="251.99998474121094" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="568.8000030517578" minWidth="10.0" prefWidth="548.0000152587891" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Enter Conflict 1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Enter Conflict 2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Enter Personality of the student" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Enter Student ID">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="stu_txt_sid" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="stu_txt_c1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="stu_txt_c2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="stu_txt_pers" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="stu_btn_add_data" mnemonicParsing="false" onAction="#add_student_data" prefHeight="26.0" prefWidth="126.0" text="Add data" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="stu_tableview" prefHeight="398.0" prefWidth="800.0">
+                                <columns>
+                                  <TableColumn fx:id="stu_tblr_sid" prefWidth="71.19997864961624" text="Student ID" />
+                                  <TableColumn fx:id="stu_tblr_pg" prefWidth="108.79998779296875" text="Grades of P" />
+                                    <TableColumn fx:id="stu_tblr_ng" prefWidth="99.19996643066406" text="Grades of N" />
+                                    <TableColumn fx:id="stu_tblr_ag" prefWidth="100.800048828125" text="Grades of A" />
+                                    <TableColumn fx:id="stu_tblr_wg" prefWidth="101.60003662109375" text="Grades of W" />
+                                    <TableColumn fx:id="stu_tblr_c1" prefWidth="108.79998779296875" text="Conflict 1" />
+                                    <TableColumn fx:id="stu_tblr_c2" prefWidth="100.7999267578125" text="Conflict 2" />
+                                    <TableColumn fx:id="stu_tblr_pers" prefWidth="110.4000244140625" text="Personalities" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Preferences">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="244.0" layoutY="269.0" prefHeight="669.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane prefHeight="262.0" prefWidth="800.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.79998779296875" minWidth="10.0" prefWidth="189.5999755859375" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="620.0" minWidth="10.0" prefWidth="610.4000244140625" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="pre_txt_sid" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="pre_txt_pid" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="pre_txt_pref" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Enter Student ID">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Enter Project ID" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Enter Project Preference" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="pre_btn_add_pref" mnemonicParsing="false" onAction="#add_preferences" prefHeight="26.0" prefWidth="167.0" text="Add Preference" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="pre_tblview" prefHeight="579.0" prefWidth="800.0">
+                                 <columns>
+                                    <TableColumn fx:id="pre_tblr_sid" prefWidth="75.0" text="Student ID" />
+                                    <TableColumn fx:id="pre_tblr_pref" prefWidth="724.0000076293945" text="Project Preferences" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Top projects">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="110.0" layoutY="57.0" prefHeight="669.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="tp_btn_pop" mnemonicParsing="false" onAction="#populate" prefHeight="26.0" prefWidth="131.0" text="Populate ">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <TextArea fx:id="tp_txt" prefHeight="624.0" prefWidth="800.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            
+            <Tab text="Assign Project">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="38.0" layoutY="36.0" prefHeight="669.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane prefHeight="184.0" prefWidth="800.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="186.39996337890625" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="613.6000366210938" minWidth="10.0" prefWidth="613.6000366210938" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="assign_txt_tid" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="25.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="assign_txt_pid" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="25.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Enter Team ID">
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Enter Project ID" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="15.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Button fx:id="assign_btn_assign_project" mnemonicParsing="false" onAction="#assign_project" prefHeight="26.0" prefWidth="129.0" text="Assign Project" />
+                                          <Button fx:id="assign_btn_populate_team" mnemonicParsing="false" onAction="#populate_team_table" text="Populate Teams table">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" />
+                                       </GridPane.margin>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="assign_tblview" prefHeight="510.0" prefWidth="800.0">
+                                 <columns>
+                                    <TableColumn fx:id="assign_tblr_tid" prefWidth="75.0" text="Team ID" />
+                                    <TableColumn fx:id="assign_tblr_pid" prefWidth="154.4000244140625" text="Assigned Project" />
+                                    <TableColumn fx:id="assign_tblr_memb" prefWidth="569.5999755859375" text="Team Members" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Team metrics">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FF03EF;">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="25.0" layoutY="-63.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Team 1">
+                                                   <font>
+                                                      <Font name="Arial Black" size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.39999389648438" minWidth="10.0" prefWidth="101.39999389648438" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60000610351562" minWidth="10.0" prefWidth="48.600006103515625" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <TextField fx:id="txt_t1_m1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t1_m2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t1_m3" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t1_m4" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <CheckBox fx:id="cb_t1_m1" mnemonicParsing="false" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t1_m2" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t1_m3" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t1_m4" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFCC99;">
+                                       <opaqueInsets>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Team 2">
+                                                   <font>
+                                                      <Font name="Arial Black" size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.39999389648438" minWidth="10.0" prefWidth="101.39999389648438" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60000610351562" minWidth="10.0" prefWidth="48.600006103515625" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <TextField fx:id="txt_t2_m1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t2_m2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t2_m3" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t2_m4" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <CheckBox fx:id="cb_t2_m1" mnemonicParsing="false" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t2_m2" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t2_m3" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t2_m4" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #30C419;">
+                                       <opaqueInsets>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Team 3">
+                                                   <font>
+                                                      <Font name="Arial Black" size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.39999389648438" minWidth="10.0" prefWidth="101.39999389648438" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60000610351562" minWidth="10.0" prefWidth="48.600006103515625" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <TextField fx:id="txt_t3_m1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t3_m2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t3_m3" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t3_m4" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <CheckBox fx:id="cb_t3_m1" mnemonicParsing="false" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t3_m2" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t3_m3" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t3_m4" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FF0000;">
+                                       <opaqueInsets>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Team 4">
+                                                   <font>
+                                                      <Font name="Arial Black" size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.39999389648438" minWidth="10.0" prefWidth="101.39999389648438" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60000610351562" minWidth="10.0" prefWidth="48.600006103515625" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <TextField fx:id="txt_t4_m1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t4_m2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t4_m3" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t4_m4" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <CheckBox fx:id="cb_t4_m1" mnemonicParsing="false" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t4_m2" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t4_m3" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t4_m4" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5980EC;">
+                                       <opaqueInsets>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label text="Team 5">
+                                                   <font>
+                                                      <Font name="Arial Black" size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.39999389648438" minWidth="10.0" prefWidth="101.39999389648438" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.60000610351562" minWidth="10.0" prefWidth="48.600006103515625" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <TextField fx:id="txt_t5_m1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t5_m2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t5_m3" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="txt_t5_m4" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <CheckBox fx:id="cb_t5_m1" mnemonicParsing="false" GridPane.columnIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t5_m2" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t5_m3" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cb_t5_m4" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="15.0" />
+                                                         </GridPane.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Student ID">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="team_sid" prefHeight="26.0" prefWidth="66.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button fx:id="team_btn_add" mnemonicParsing="false" onAction="#add_member" text="ADD">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="team_btn_swap" mnemonicParsing="false" onAction="#swap_member" text="SWAP">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="team_btn_undo" mnemonicParsing="false" onAction="#undo" text="UNDO">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="team_btn_commit" mnemonicParsing="false" onAction="#commit" text="COMMIT">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>                                    
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <BarChart fx:id="bc12" barGap="6.0" prefHeight="200.0" prefWidth="242.0" title="1st and 2nd Preference">
+                                             <xAxis>
+                                                <CategoryAxis fx:id="bc1_ca" side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="bc1_na" side="LEFT" tickLabelGap="5.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <Label fx:id="sd12" style="-fx-alignment: center;" text="Std Dev =" textAlignment="CENTER" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <BarChart fx:id="bcac" prefHeight="200.0" prefWidth="242.0" title="Average Competancy Level">
+                                             <xAxis>
+                                                <CategoryAxis fx:id="bc2_ca" side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="bc2_na" side="LEFT" upperBound="3.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <Label fx:id="sdac" text="Std Dev =" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <BarChart fx:id="bcsg" prefHeight="200.0" prefWidth="242.0" title="Skills Gap">
+                                             <xAxis>
+                                                <CategoryAxis fx:id="bc3_ca" side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="bc3_na" side="LEFT" upperBound="3.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <Label fx:id="sdsg" text="Std Dev = " />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
